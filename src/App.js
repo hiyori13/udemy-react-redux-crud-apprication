@@ -1,40 +1,26 @@
 import React from "react";
 
-//研修動画内容
-// class App extends Component{
-//   render(){
-//     return(
-//       <React.Fragment>
-//         <label htmlFor="bar">bar</label>
-//         <input type="text" onChange={() => {console.log("I am clicked!")}} />
-//       </React.Fragment>
-//     )
-//   }
-// }
-
 const App = () => {
+  const profiles = [
+     { name: "Taro", age: 10 },
+     { name: "Hanako", age: 5 },
+     { name: "NoName" }
+  ]
   return (
     <div>
-      <Cat />
-      <Cat />
-      <Cat />
-      <Cat />
+      {profiles.map((profiles, index) => {
+        return <User name={profiles.name} age={profiles.age} key={index}/>
+      })}
     </div>
   )
 }
 
-const Cat = () => {
-  return <div>Meow!</div>
+const User = (props) => {
+  return <div>Hi!, I am {props.name}, and {props.age} years old!</div>
 }
 
-//最初からの内容を含む部分
-// function App() {
-//   return (
-//     <React.Fragment>
-//       <label htmlFor="bar">bar</label>
-//       <input type="text" onChange={() => {console.log("I am clicked!")}} />
-//     </React.Fragment>
-//   )
-// }
+User.defaultProps = {
+  age: 1
+}
 
 export default App;
