@@ -1,10 +1,10 @@
-export const INCREMET = "INCREMET"
-export const DECREMET = "DECREMET"
+export const INCREMENT = "INCREMENT"
+export const DECREMENT = "DECREMENT"
 
 export const increment = () =>({
-    type: INCREMET
+    type: INCREMENT
 })
 
 export const decrement = () =>({
-    type: DECREMET
+    type: DECREMENT
 })
